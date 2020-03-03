@@ -1,0 +1,31 @@
+version: '3'
+services:
+  ajoo:
+    image: viziquer/viziquer
+    container_name: ajoo-client
+    restart: unless-stopped
+    environment:
+      ROOT_URL: https://shapes.woicis.id.lv
+      VIRTUAL_HOST: shapes.woicis.id.lv
+      LETSENCRYPT_HOST: shapes.woicis.id.lv
+      LETSENCRYPT_EMAIL: davis.voicescuks@gmail.com
+      MONGO_URL: mongodb://mongodb/vq
+      STARTUP_DELAY: 1
+    networks:
+      - ajoo-external
+      - ajoo-internal
+    depends_on:
+      - mongodb
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    volumes:
+    - ./data/mongo:/data/db
+    networks:
+      - ajoo-internal
+networks:
+  ajoo-external:
+    external:
+      name: webproxy
+  ajoo-internal:
+      driver: bridge
