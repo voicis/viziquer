@@ -231,6 +231,10 @@
         ],
         "collectionContextMenu": [
           {
+            "item": "Connect Classes",
+            "procedure": "ConnectClasses"
+          },
+          {
             "item": "Cut\tCtrl+X",
             "procedure": "Cut"
           },
@@ -241,10 +245,6 @@
           {
             "item": "Delete\tDelete",
             "procedure": "Delete"
-          },
-          {
-                "item": "Connect Classes",
-                "procedure": "ConnectClasses"
           },
           {
             "item": "Align Selected Boxes",
@@ -931,6 +931,14 @@
               {
                 "item": "Add Link ...",
                 "procedure": "AddLink"
+              },
+              {
+                "item": "TEST: Add Link ...",
+                "procedure": "AddLinkTest"
+              },
+              {
+                "item": "Add Subquery ...",
+                "procedure": "AddSubquery"
               },
               {
                 "item": "Add Attributes ...",
@@ -2711,7 +2719,7 @@
               }
             ],
             "readModeKeyStrokes": [],
-            "contextMenu": [
+            "contextMenu": [              
               {
                 "item": "Delete",
                 "procedure": "Delete"
@@ -2828,6 +2836,14 @@
             ],
             "readModeKeyStrokes": [],
             "contextMenu": [
+              {
+                "item": "Connect classes",
+                "procedure": "linkConnectClasses"
+              },
+              {
+                "item": "TEST_Connect classes",
+                "procedure": "test_linkConnectClasses"
+              },
               {
                 "item": "Delete",
                 "procedure": "Delete"
@@ -3451,13 +3467,13 @@
                     {
                       "compartmentStyle": "NoStyle",
                       "elementStyle": "NoStyle",
-                      "input": "Nested Query",
+                      "input": "Subquery",
                       "value": "SUBQUERY"
                     },
                     {
                       "compartmentStyle": "NoStyle",
                       "elementStyle": "NoStyle",
-                      "input": "Global Nested Query",
+                      "input": "Global Subquery",
                       "value": "GLOBAL_SUBQUERY"
                     },
                     {

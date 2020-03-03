@@ -921,24 +921,36 @@
             "readModeKeyStrokes": [],
             "contextMenu": [
               {
-                "item": "Aggregate ...",
-                "procedure": "AddAggregate"
+                "item": "Add Field ...",
+                "procedure": "Foo",
+				"subMenu": [
+					{
+						"item": "Simple (attribute) ...",
+						"procedure": "AddAttribute"
+					},
+					{
+						"item": "Aggregate ...",
+						"procedure": "AddAggregate"
+					},
+					{
+						"item": "Filter (Condition) ...",
+						"procedure": "AddCondition"
+					}
+                ]
               },
-              {
+			  {
                 "item": "Add Link ...",
-                "procedure": "AddLink"
-              },
-              {
-                "item": "Add Link Test",
-                "procedure": "AddLinkTest"
-              },
-              {
-                "item": "Add Attributes ...",
-                "procedure": "AddAttribute"
-              },
-              {
-                "item": "Add Condition ...",
-                "procedure": "AddCondition"
+                "procedure": "Foo",
+				"subMenu": [
+                  	{
+						"item": "Simple (join) ...",
+						"procedure": "AddLink"
+					},
+					{
+						"item": "Subquery ...",
+						"procedure": "AddSubquery"
+					}
+                ]
               },
               {
                 "item": "Re-shape Query",
@@ -1346,10 +1358,6 @@
                         "name": "Expression",
                         "extensionPoints": [
                           {
-                            "extensionPoint": "dynamicDropDown",
-                            "procedure": "VQgetAttributeNames"
-                          },
-                          {
                             "extensionPoint": "processKeyStroke",
                             "procedure": "attributeAutoCompletion"
                           }
@@ -1361,7 +1369,8 @@
                           "type": "combobox"
                         },
                         "subCompartmentTypes": [],
-                        "label": "Expression"
+                        "label": "Expression",
+						"description": "Use Ctrl+Space for text auto-completion"
                       },
                       {
                         "_id": "4727f620bbedd3f1f98bde47",
@@ -1867,8 +1876,7 @@
                         "suffix": null,
                         "defaultValue": null,
                         "inputType": {
-                          "type": "textarea",
-                          "rows": 3
+                          "type": "combobox"
                         },
                         "description": "Use Ctrl+Space for text auto-completion",
                         "subCompartmentTypes": [],
@@ -3107,16 +3115,13 @@
                     "procedure": "VQsetAssociationName"
                   },
                   {
-                    "extensionPoint": "dynamicDropDown",
-                    "procedure": "VQgetAssociationNames"
-                  },
-				  {
                     "extensionPoint": "processKeyStroke",
                     "procedure": "linkAutoCompletion"
                   }
                 ],
                 "dialogTabId": "LH5gP2Peqhnu5rMeB",
-                "label": "Name"
+                "label": "Name",
+				"description": "Use Ctrl+Space for text auto-completion"
               }
             },
             {
@@ -3451,13 +3456,13 @@
                     {
                       "compartmentStyle": "NoStyle",
                       "elementStyle": "NoStyle",
-                      "input": "Nested Query",
+                      "input": "Subquery",
                       "value": "SUBQUERY"
                     },
                     {
                       "compartmentStyle": "NoStyle",
                       "elementStyle": "NoStyle",
-                      "input": "Global Nested Query",
+                      "input": "Global Subquery",
                       "value": "GLOBAL_SUBQUERY"
                     },
                     {
